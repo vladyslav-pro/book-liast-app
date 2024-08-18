@@ -1,0 +1,15 @@
+<div class="book-item">
+  <div class="book-item__image">
+    @defer (on viewport) {
+      <img [src]="book().imageUrl" [alt]="book().author">
+    } @placeholder {
+      <span>here will be image</span>
+    }
+<!--    <img [src]="book().imageUrl" [alt]="book().author">-->
+  </div>
+  <div class="book-item__annotation">
+    <h2> Author: {{ book().author }}</h2>
+    <h2>Name: {{ book().title }}</h2>
+    <p>Publication: {{ book().yearOfPublication }}</p>
+  </div>
+</div>

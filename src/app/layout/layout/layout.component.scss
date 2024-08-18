@@ -1,0 +1,38 @@
+main {
+  width: 100%;
+  .search-input {
+    width: 600px;
+    margin: 0 auto;
+
+    .mat-mdc-text-field-wrapper.mdc-text-field.mdc-text-field--filled {
+      background-color: var(--color2);
+      color: var(--color3);
+
+    }
+    .mat-mdc-input-element.mat-mdc-form-field-input-control.mdc-text-field__input  {
+      font-weight: 700 ;
+    }
+
+    .mat-mdc-form-field-flex {
+      height: 60px;
+      align-items: center;
+    }
+
+    button.mat-icon-button {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    mat-icon {
+      color: var(--color1);
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+  }
+}
+
+
+
