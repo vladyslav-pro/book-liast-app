@@ -1,0 +1,64 @@
+<div class="book-information-dialog" >
+
+  <form
+    [formGroup]="bookForm"
+    (ngSubmit)="onSubmit()"
+    class="book-information-dialog__form"
+  >
+
+    <mat-form-field >
+      <mat-label>Book title</mat-label>
+      <input
+        matInput
+        formControlName="title"
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Author</mat-label>
+      <input
+        matInput
+        formControlName="author"
+      >
+    </mat-form-field>
+    <mat-form-field >
+      <mat-label>Year of published</mat-label>
+      <input
+        matInput
+        formControlName="yearOfPublication"
+      >
+    </mat-form-field>
+    <mat-form-field >
+      <mat-label>Genre</mat-label>
+      <input
+        matInput
+        formControlName="genre"
+      >
+    </mat-form-field>
+    <mat-form-field >
+      <mat-label>Book Image</mat-label>
+      <input
+        matInput
+        formControlName="imageUrl"
+      >
+    </mat-form-field>
+    <mat-form-field class="description-field">
+      <mat-label>Book Description</mat-label>
+      <textarea
+        matInput
+        formControlName="description"
+        class="description"
+      ></textarea>
+    </mat-form-field>
+    <mat-dialog-actions class="book-information-dialog__form__actions">
+      <button mat-button  type="submit">Save</button>
+      <button mat-button (click)="onClose()">Close</button>
+    </mat-dialog-actions>
+
+    @if (formInvalid) {
+      <p class="control-error">
+        Invalid Form
+      </p>
+    }
+  </form>
+</div>
+

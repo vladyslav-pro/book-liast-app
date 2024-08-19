@@ -1,12 +1,14 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component, inject, ViewEncapsulation} from '@angular/core';
 import {HeaderComponent} from "./header/header.component";
 import {BookItemComponent} from "./book-item/book-item.component";
 import {BookInformation, booksMock, SearchPipe} from "../../shared";
 import {MatFormField, MatLabel, MatSuffix} from "@angular/material/form-field";
 import {FormsModule} from "@angular/forms";
 import {MatIcon} from "@angular/material/icon";
-import {MatIconButton} from "@angular/material/button";
+import {MatButton, MatIconButton} from "@angular/material/button";
 import {MatInput} from "@angular/material/input";
+import {BookInformationDialogService} from "./book-information-dialog/book-information-dialog.service";
+import {BookService} from "./book-service/book.service";
 
 @Component({
   selector: 'app-layout',
@@ -21,13 +23,21 @@ import {MatInput} from "@angular/material/input";
     MatInput,
     MatIconButton,
     MatSuffix,
-    SearchPipe
+    SearchPipe,
+    MatButton
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
   encapsulation: ViewEncapsulation.None
 })
 export class LayoutComponent {
-  bookName: string = '';
-  public books: BookInformation[] = booksMock;
+  private newBookDialogService = inject(BookInformationDialogService)
+  private bookService = inject(BookService)
+
+  public bookName: string = '';
+  books = this.bookService.loadBooks;
+
+  public openDialog() {
+    this.newBookDialogService.openDialog()
+  }
 }

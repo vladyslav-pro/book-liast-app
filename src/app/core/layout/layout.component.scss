@@ -1,8 +1,21 @@
 main {
   width: 100%;
+  .book-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .new-book {
+      color: var(--color3);
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: 700;
+      cursor: pointer;
+      background-color: var(--color2);
+    }
+  }
   .search-input {
     width: 600px;
-    margin: 0 auto;
 
     .mat-mdc-text-field-wrapper.mdc-text-field.mdc-text-field--filled {
       background-color: var(--color2);

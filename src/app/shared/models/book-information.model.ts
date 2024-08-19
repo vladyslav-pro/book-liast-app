@@ -6,4 +6,5 @@ export interface BookInformation {
   imageUrl: string;
   description: string;
   favorite?: boolean;
+  id: string;
 }

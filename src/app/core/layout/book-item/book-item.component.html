@@ -1,11 +1,14 @@
 <div class="book-item">
   <div class="book-item__image">
     @defer (on viewport) {
-      <img [src]="book().imageUrl" [alt]="book().author">
+      <img
+        [src]="book().imageUrl"
+        [alt]="book().author"
+        matTooltip="click for shows more information"
+        matTooltipClass="image-tooltip">
     } @placeholder {
-      <span>here will be image</span>
+      <span>{{ book().title }}</span>
     }
-<!--    <img [src]="book().imageUrl" [alt]="book().author">-->
   </div>
   <div class="book-item__annotation">
     <h2> Author: {{ book().author }}</h2>
