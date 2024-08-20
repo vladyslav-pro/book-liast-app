@@ -1,1 +1,30 @@
-<p>book-details works!</p>
+<div class="book-details">
+  <div class="book-details__title">
+    <h3>Book title:</h3>
+    <p>{{ bookDetails().title }}</p>
+  </div>
+  <div class="book-details__author">
+    <h3>Author</h3>
+    <p>{{ bookDetails().author }}</p>
+  </div>
+  <div class="book-details__year">
+    <h3>Year of published</h3>
+    <p>{{ bookDetails().yearOfPublication}}</p>
+  </div>
+  <div class="book-details__genre">
+    <h3>Genre</h3>
+    <p>{{ bookDetails().genre }}</p>
+  </div>
+  <div class="book-details__image">
+    <h3>Book Image</h3>
+      <img
+        [src]="bookDetails().imageUrl"
+        [alt]="bookDetails().author"
+      >
+  </div>
+  <div class="book-details__description">
+    <h3>Book Description</h3>
+    <p>{{ bookDetails().description}}</p>
+  </div>
+
+</div>

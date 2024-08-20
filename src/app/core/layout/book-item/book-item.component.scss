@@ -37,5 +37,45 @@
       font-weight: normal;
     }
   }
+
+  &__actions {
+    margin-left: auto;
+  }
+
+  .annotation__form {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    div {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    input {
+      height: 40px;
+      width: 300px;
+    }
+    button {
+      height: 40px;
+      width: 100px;
+      background-color: var(--color2);
+      color: var(--color3);
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font: inherit;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background-color 0.3s;
+
+      &:hover, &:active {
+        background-color: var(--color3);
+        color: var(--color2);
+      }
+    }
+  }
 }
 

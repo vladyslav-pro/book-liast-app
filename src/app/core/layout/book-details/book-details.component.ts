@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import {BookInformation} from "../../../shared";
+import {MatTooltip} from "@angular/material/tooltip";
 
 @Component({
-  selector: 'app-book-details',
+  selector: 'book-details',
   standalone: true,
-  imports: [],
+  imports: [
+    MatTooltip
+  ],
   templateUrl: './book-details.component.html',
   styleUrl: './book-details.component.scss'
 })
 export class BookDetailsComponent {
-
+  bookDetails = input.required<BookInformation>();
 }

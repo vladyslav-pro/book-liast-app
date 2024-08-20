@@ -10,7 +10,7 @@ export class BookInformationDialogService {
     const dialogRef = this.dialog.open(BookInformationDialogComponent, {
       width: '600px',
       height: '900px',
-      data: data
+      data: data || null
     });
     return dialogRef.afterClosed().subscribe(result => {
       console.log('data', result)

@@ -15,6 +15,6 @@
   </div>
 
   @for (book of books() | search: bookName; track $index) {
-    <app-book-item [book]="book"></app-book-item>
+    <app-book-item @deleteItem [book]="book"></app-book-item>
   }
 </main>

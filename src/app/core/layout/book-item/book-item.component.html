@@ -1,18 +1,64 @@
-<div class="book-item">
+<div class="book-item" >
   <div class="book-item__image">
     @defer (on viewport) {
       <img
         [src]="book().imageUrl"
         [alt]="book().author"
         matTooltip="click for shows more information"
-        matTooltipClass="image-tooltip">
+        matTooltipClass="image-tooltip"
+        (click)="showMoreInformation(book())"
+      >
     } @placeholder {
       <span>{{ book().title }}</span>
     }
   </div>
   <div class="book-item__annotation">
-    <h2> Author: {{ book().author }}</h2>
-    <h2>Name: {{ book().title }}</h2>
-    <p>Publication: {{ book().yearOfPublication }}</p>
+    @if (!editMode) {
+      <h2> Author: {{ book().author }}</h2>
+      <h2>Name: {{ book().title }}</h2>
+      <p>Publication: {{ book().yearOfPublication }}</p>
+    } @else {
+      <form [formGroup]="editBookInformation" class="annotation__form" (ngSubmit)="onSubmit()">
+        <div>
+          <h2> Author: </h2>
+          <input
+            type="text"
+            formControlName="author"
+            placeholder="Author"
+          >
+        </div>
+        <div>
+          <h2> Name: </h2>
+          <input
+            type="text"
+            formControlName="bookName"
+            placeholder="Book name"
+          >
+        </div>
+        <div>
+          <h2> Year: </h2>
+          <input
+            type="text"
+            formControlName="yearOfPublication"
+            placeholder="Year of publication"
+          >
+        </div>
+        <button
+          type="submit"
+          [disabled]="editBookInformation.invalid">save</button>
+        <button
+          type="button"
+          (click)="canselEdit()">cancel</button>
+      </form>
+    }
+  </div>
+  <div class="book-item__actions">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" >
+      <button mat-menu-item (click)="editBook(book())">Edit</button>
+      <button mat-menu-item (click)="deleteBook(book().id)" >Delete</button>
+    </mat-menu>
   </div>
 </div>
