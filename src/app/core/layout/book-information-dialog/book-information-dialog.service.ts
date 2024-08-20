@@ -12,8 +12,6 @@ export class BookInformationDialogService {
       height: '900px',
       data: data || null
     });
-    return dialogRef.afterClosed().subscribe(result => {
-      console.log('data', result)
-    });
+    return dialogRef.afterClosed()
   }
 }

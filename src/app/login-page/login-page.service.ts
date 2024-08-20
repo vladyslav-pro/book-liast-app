@@ -13,8 +13,6 @@ export class LoginPageService {
     }
   }
 
-
-
   setUserName(name: string) {
     this.userName.set(name);
     localStorage.setItem('userName', JSON.stringify(name));
