@@ -1,11 +1,7 @@
 @use '@angular/material' as mat;
 @include mat.core();
 
-:root {
-  --color1: linear-gradient(to bottom, #2c0a4c, #450d80);
-  --color2: #9965dd;
-  --color3: #150722;
-}
+
 * {
   box-sizing: border-box;
 }
@@ -33,4 +29,9 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color1);
+}
+:root {
+  --color1: linear-gradient(to bottom, #2c0a4c, #450d80);
+  --color2: #9965dd;
+  --color3: #150722;
 }

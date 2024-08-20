@@ -1,0 +1,13 @@
+<div class="welcome-page">
+  <h1 class="welcome-page__header">Welcome to Book application</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="welcome-page__form">
+    <input type="text" matInput id="name" placeholder="write your name" name="name" formControlName="name">
+    @if (formIsValid) {
+      <span>please type your name (min length of name is 2 sign)</span>
+    }
+    <button
+      type="submit"
+      [disabled]="loginForm.invalid"
+    >Go to application</button>
+  </form>
+</div>

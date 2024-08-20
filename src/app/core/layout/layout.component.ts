@@ -33,6 +33,7 @@ import {deleteItem} from "./book-item/book-item-animation.component";
   encapsulation: ViewEncapsulation.None,
 })
 export class LayoutComponent {
+
   private newBookDialogService = inject(BookInformationDialogService)
   private bookService = inject(BookService)
 
